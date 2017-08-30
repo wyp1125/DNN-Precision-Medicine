@@ -4,7 +4,7 @@ from __future__ import print_function
 import sys
 import random
 if len(sys.argv)<4:
-  print("Usage:python divide_train_test.py input output_prefix fold")
+  print("Usage:python divide_train_test.py input output_prefix train-test_fold")
   quit()
 with open(sys.argv[1]) as f:
   content=[x.strip('\n') for x in f.readlines()]
