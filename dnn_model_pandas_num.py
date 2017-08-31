@@ -36,10 +36,11 @@ import numpy as np
 import tensorflow as tf
 import pandas as pd
 
-if len(sys.argv)<5:
-  print("Usage:python3 dnn_model_categorical.py training_file testing_file #classes layer_units(comma delimited)")
+if len(sys.argv)<6:
+  print("Usage:python3 dnn_model_categorical.py training_file testing_file #classes layer_units(comma delimited) #steps")
   quit()
 #process header
+nsteps=sys.argv[5]
 with open(sys.argv[1],'r') as fl:
   line=fl.readline().strip('\n')
 header=line.split(',')
@@ -90,7 +91,7 @@ def main(unused_argv):
       feature_columns=deep_columns,
       hidden_units=h_units,
       n_classes=n_cls)
-  m.fit(input_fn=lambda: input_fn(df_train), steps=100)
+  m.fit(input_fn=lambda: input_fn(df_train), steps=nsteps)
   results = m.evaluate(input_fn=lambda: input_fn(df_test), steps=1)
   print(results)
 

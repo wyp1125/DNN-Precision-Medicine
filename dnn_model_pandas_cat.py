@@ -37,8 +37,8 @@ import numpy as np
 import tensorflow as tf
 import pandas as pd
 
-if len(sys.argv)<6:
-  print("Usage:python3 dnn_model_pandas_cat.py training_file testing_file categorical_columns(comma delimited) #classes layer_units(comma delimited)")
+if len(sys.argv)<7:
+  print("Usage:python3 dnn_model_pandas_cat.py training_file testing_file categorical_columns(comma delimited) #classes layer_units(comma delimited) #steps")
   quit()
 
 #process header
@@ -51,7 +51,7 @@ for i in range(n_col-1):
   features.append(header[i])
 LABEL_COLUMN=header[n_col-1]
 #process arguments
-nsteps=200
+nsteps=int(sys.argv[6])
 n_cls=int(sys.argv[4])
 h_units=[]
 lt=sys.argv[5].split(',')

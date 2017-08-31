@@ -7,14 +7,22 @@ This program divides a dataset into train and testing sets.
 
 2) make_test_data_cat.py.
 
-This program makes a simulated dataset for DNN application programms. The last several (no more than 10) columns before 'label' contain categorical values. If no categorical values are simulated, please supply the last argument with 0.
+This program makes a simple simulated dataset for testing the execution of the DNN programms. The last several (no more than 10) columns before 'label' contain categorical values. If no categorical values are simulated, please supply the last argument with 0.
 
 For instance,  "python make_test_data_cat.py sample1.train.csv 3 200 20 4" to simulate a training dataset with 3 classes, 200 samples, 20 features (last 4 are categorical); "python make_test_data_cat.py sample2.test.csv 3 50 10 0" to simulate a testing dataset with 3 classes, 50 samples, 10 features (all are real values).
 
 3) dnn_model_pandas_num.py.
 
-DNN model to process new datasets of all real values.
+Build DNN models on new datasets of all real values.
 
 4) dnn_model_pandas_cat.py.
 
-DNN model to process new datasets containing categorical columns
+Build DNN models on new datasets containing categorical columns.
+
+5) simulate_pm.py
+
+Generate the simulated precision medicine dataset.
+
+6) pm.train.csv, pm.test.csv
+
+Sample precision medicine modeling data. Use the command "python3 dnn_model_pandas_cat.py pm.train.csv pm.test.csv smoking,alcohol,excercise,substance,depression 4 600,600,600 800" to run.
