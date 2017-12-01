@@ -1,5 +1,5 @@
-# Python-Deep-Learning-Toolset
-Python programs for applying deep neural network models to new datasets. New datasets should be divided into a training and a testing CSV file. Data should be organized in NumPy DataFrame format, with first row being variable/feature names and last column being label. Categorical values should show characters rahter than numbers.
+# Python-DNN-DataFrame
+Python programs for applying deep neural network models to new datasets in the form of pandas data frames. New datasets should be divided into a training and a testing CSV file. Data should be organized in pandas DataFrame format, with first row being variable/feature names and last column being label. Categorical values should show characters rahter than numbers.
 
 1) divide_train_test.py.
 
